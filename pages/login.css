@@ -1,0 +1,63 @@
+.auth-form-container, .login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+   
+
+   
+  }
+  .header
+  {
+    font-size: xx-large;
+    font-weight: 1000;
+    color: rgb(253, 255, 0);
+    text-shadow: 0.5px 0.5px rgba(255, 255, 0, 0.691);
+  }
+
+.text
+{
+  font-size:larger;
+    font-weight: 650;
+    color: rgb(253, 255, 0);
+}
+
+
+
+  @media screen and (min-width: 600px) {
+    .auth-form-container {
+      padding: 5rem;
+      border: rgb(14, 3, 37);
+      border-radius: 10px;
+      margin: 0.5rem;
+    }
+  }
+  
+  .loglabel {
+    text-align: left;
+    padding: 0.25rem 0;
+    color: rgb(253, 255, 0);
+    font-weight: 400;
+  }
+  
+  .log {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color:rgb(14, 3, 37);
+    color:rgb(253, 255, 0);
+  }
+  
+  button {
+    border: none;
+    background-color:rgb(14, 3, 37);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(253, 255, 0);
+  }
+  
+  .link-btn {
+    background: none;
+    color:rgb(253, 255, 0);
+    text-decoration: underline;
+  }
