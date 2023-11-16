@@ -38,6 +38,7 @@ const BudgetPlanner = () => {
           <option value="Travel">Travel</option>
           <option value="Leisure">Leisure</option>
           <option value="Education">Education</option>
+          <option value="Others">Others</option>
         </select>
         <br/>
         <br/>
