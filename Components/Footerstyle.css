@@ -64,3 +64,12 @@ img{
     height: auto; 
     margin-bottom: 10px; 
 }
+#no-btn{
+	background-color: #0e0325;
+	color: #fff;
+	margin-bottom: 0px;
+	font-size: 15px;
+	margin-left: 0;
+	text-decoration: none;
+	font-weight: bold;
+}
