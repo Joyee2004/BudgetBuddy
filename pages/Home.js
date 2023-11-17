@@ -9,9 +9,11 @@ return (
       <img src={require("../img/home1.webp")} alt="h" className="back-img" />
 
       <div className="back-text">
-        <h1 className='name'>Online Expense Management</h1>
+        <h1 className="name">Online Expense Management</h1>
         <h3>Easily manage your expenses</h3>
-        <button id="signup-btn">Sign Up for Free</button>
+        <a href="/register">
+          <button id="signup-btn">Sign Up for Free</button>
+        </a>
       </div>
     </div>
 
