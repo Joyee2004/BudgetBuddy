@@ -4,15 +4,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #0e0325; /* Dark background color */
-  color: #ecf0f1; /* Light text color */
+  background: rgba(255, 255, 255, 0.8); /* Translucent white background */
+  color: #060606;
   padding: 40px;
-  border-radius: 10px; /* Slightly rounded corners for a softer look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
-  width: 60%; /* Set the width to 80% of the parent container */
-  max-width: 600px; /* Set a maximum width for the container */
-  margin: 0 520px; /* Center the container horizontally */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  max-width: 600px;
+  margin: 0 520px;
 }
+
 
 /* Styling for AddTransview component */
 input,
@@ -24,7 +25,7 @@ select {
 label {
   display: block;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: #090909;
 }
 
 input[type="radio"] {
@@ -79,7 +80,7 @@ button {
 
 /* Transaction component styles */
 h3 {
-  color: #7dacdc; /* Darker text color for headings */
+  color: #132434; /* Darker text color for headings */
 }
 
 input[type="text"] {
