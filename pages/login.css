@@ -1,22 +1,29 @@
-.auth-form-container, .login-form, .register-form {
+ .login-form, .register-form {
     display: flex;
     flex-direction: column;
+  
    
-
-   
+  }
+  .login-form, .register-form{
+     max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   .header
   {
-    font-size: xx-large;
-    font-weight: 1000;
+    
+    
     color: rgb(253, 255, 0);
     text-shadow: 0.5px 0.5px rgba(255, 255, 0, 0.691);
+    margin: 0;
   }
 
 .text
 {
-  font-size:larger;
-    font-weight: 650;
+  
     color: rgb(253, 255, 0);
 }
 
@@ -27,7 +34,7 @@
       padding: 5rem;
       border: rgb(14, 3, 37);
       border-radius: 10px;
-      margin: 0.5rem;
+      
     }
   }
   
@@ -35,7 +42,7 @@
     text-align: left;
     padding: 0.25rem 0;
     color: rgb(253, 255, 0);
-    font-weight: 400;
+    
   }
   
   .log {
@@ -47,7 +54,7 @@
     color:rgb(253, 255, 0);
   }
   
-  button {
+  .sign-up {
     border: none;
     background-color:rgb(14, 3, 37);
     padding: 20px;
@@ -60,4 +67,23 @@
     background: none;
     color:rgb(253, 255, 0);
     text-decoration: underline;
+    margin-bottom: 50px;
+  }
+  .auth-form-container {
+  max-width: 400px;
+  height: 500px;
+  margin: 0px auto 0px auto;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 8px;
+  
+  text-align: center;
+}
+@media screen and (min-width: 600px) {
+    .form-container {
+      padding: 5px;
+      border: rgb(14, 3, 37);
+      border-radius: 10px;
+      margin: 0;
+    }
   }
