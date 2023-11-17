@@ -15,13 +15,19 @@ const Footer = () => {
           <div className="column">
             <div className="heading">About Us</div>
             <div className="footerlink">
-              <a href="../pages/Home.js">Aim</a>
+              <a href="/home">
+                <button id="no-btn">Home</button>
+              </a>
             </div>
             <div className="footerlink">
-              <a href="../pages/VisionPage.js">Vision</a>
+              <a href="/vision">
+                <button id="no-btn">vision</button>
+              </a>
             </div>
             <div className="footerlink">
-              <a href="../pages/TestimonialPage.js">Testimonial</a>
+              <a href="/testimonial">
+                <button id="no-btn">Testimonials</button>
+              </a>
             </div>
           </div>
           <div className="column">
