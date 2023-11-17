@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import image from "./images/login.png";
+import image from "../img/login.png";
 
 
 import'./login.css';
-import { Login } from "./login";
-import { Register } from "./register";
-export const Logreg = () => {
+import  Login  from "./login.js";
+import  Register  from "./register";
+const Logreg = () => {
     const [currentForm, setCurrentForm] = useState('login');
 
   const toggleForm = (formName) => {
@@ -21,3 +21,4 @@ export const Logreg = () => {
   )
 }
 
+export default Logreg;
