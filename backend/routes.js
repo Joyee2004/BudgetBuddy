@@ -95,26 +95,29 @@ router.post('/dashboard', (req, res) => {
     });
 });
 
-router.post('/dashboard', (req, res) => {
-    console.log('Dashboard route hit!');
+router.post('/calendar', (req, res) => {
+    console.log('Calendar route hit!');
     // Check login credentials in the database
-    const { name, email, username, pass } = req.body;
-    console.log('Name:', name);
-    console.log('email', email);
-    console.log('Username:', username);
-console.log('Password:', pass);
+    const { index } = req.body;
+    console.log('index:', index);
 
-    const query = `INSERT INTO user VALUES ( ?, ?, ?, ?, CURDATE())`;
 
-    db.query(query, [ username, name, email, pass], (err, result) => {
+    const query = `SELECT SUM(spent_amt) FROM expenses WHERE user_id = 'test' AND DAY(exp_date)= ? AND MONTH(exp_date)= MONTH(CURDATE())`;
+
+    db.query(query, [ index], (err, result) => {
+        console.log('SQL Query Result:', result);
         if (err) {
             console.error('Database query error:', err);
             res.status(500).json({ message: 'Internal server error' });
         } else {
-            
-                // Successful login
-                console.log("200")
-                res.status(200).json({ message: 'Register successful', redirect: '/login' });
+            if (result && result[0] && result[0].total !== null) {
+                const totalAmount = result[0].total;
+                console.log("200");
+                res.status(200).json({ message: 'Login successful', redirect: '/dashboard', amount: result[0]['SUM(spent_amt)'] });
+            } else {
+                console.log("401")
+                res.status(401).json({ message: 'Invalid username or password', amount: null });
+            }
         }
     });
 });
