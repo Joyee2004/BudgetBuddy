@@ -21,10 +21,10 @@ const Login = (props) => {
           window.location.href = "/dashboard";
         } else {
           // Handle login failure
-          console.error("Login failed");
+          alert.error("Login failed");
         }
       } catch (error) {
-        console.error("Error during login:", error);
+        alert.error("Error during login:", error);
       }
     };
 
