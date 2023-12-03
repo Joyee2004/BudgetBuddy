@@ -1,10 +1,8 @@
-import { Overview } from "./overview";
+import  Overview  from "./overview";
 import { Transaction } from "./transaction";
 import React, { useState, useEffect } from "react";
-import image from "../img/expenses.jpg";
+
 import "./expense.css";
-
-
 
 const Expense = (props) => {
   const [transaction, updateTranscation] = useState([]);
@@ -32,25 +30,19 @@ const Expense = (props) => {
   useEffect(() => calcbalance(), [transaction]);
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${image})`,
-        backgroundRepeat: "no-repeat",
-        
-        height: "115vh", // Adjust the height as needed
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      className="App"
-    >
-      <div className="cont">
-        
+    <div className="totale">
+      <div className="exp-img">
+        <img
+          src="https://st2.depositphotos.com/12056054/44306/v/450/depositphotos_443067284-stock-illustration-success-business-career-opportunity-business.jpg"
+          alt="login-img"
+        />
+      </div>
+      <div className="backe">
+        <div className="conte">
           <Overview add={add} expense={expense} income={income}></Overview>
-          
-          
+
           <Transaction transaction={transaction}></Transaction>
-        
+        </div>
       </div>
     </div>
   );
