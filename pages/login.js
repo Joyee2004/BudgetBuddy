@@ -1,41 +1,52 @@
 import axios from 'axios'
 import "./login.css";
+import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 const Login = (props) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-    const handleLogin = async () => {
-      // Make an API call to the login endpoint
-      try {
-        const response = await fetch("http://localhost:3001/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ username, password }),
-        });
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    // Make an API call to the login endpoint
+    try {
+      const response = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
 
-        if (response.ok) {
-          // Redirect to another page on successful login
-          window.location.href = "/dashboard";
-        } else {
-          // Handle login failure
-          alert.error("Login failed");
-        }
-      } catch (error) {
-        alert.error("Error during login:", error);
+      if (response.ok) {
+        const responseData = await response.json(); // Parse response body as JSON
+        console.log("Login successful:", responseData.message);
+
+        navigate(responseData.redirect);
+      } else {
+        // Handle login failure
+        const errorData = await response.json(); // Parse error response body as JSON
+        console.error("Login failed:", errorData.message);
       }
-    };
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
 
-
-
-    return (
+  return (
+    <div className="completel">
+      <div className="login-img">
+        <img
+          src="https://cdn.pixabay.com/photo/2022/12/10/13/46/attack-7647136_640.png"
+          alt="login-img"
+        />
+      </div>
       <div className="auth-form-container">
-        <h2 className="header">Login</h2>
-        <form className="login-form">
-          <label className="loglabel" htmlFor="email">
-            username
+        <h2 className="headerl">LOGIN</h2>
+        <form className="login-form" method="post" action="/login">
+          <label className="loglabel" htmlFor="username">
+            Username
           </label>
           <input
             className="log"
@@ -48,7 +59,7 @@ const Login = (props) => {
             required
           />
           <label className="loglabel" htmlFor="password">
-            password
+            Password
           </label>
           <input
             className="log"
@@ -71,6 +82,7 @@ const Login = (props) => {
           Don't have an account? Register here.
         </button>
       </div>
-    );
+    </div>
+  );
 };
 export default Login;
