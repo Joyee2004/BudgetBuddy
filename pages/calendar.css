@@ -1,17 +1,25 @@
 .month-layout{
-    background: #2c375f;
+    
+   background-color: #afafae;
     width: auto;
     height: auto;
     color: rgb(12, 12, 12);
 }
+.total {
+  
+  width: 100%; /* Make sure the container takes the full width of its parent */
+  height: 100vh; /* Make sure the container takes the full height of the viewport */
+}
 
-.header {
+
+.headerr {
   text-align: center;
   font-weight: bold;
   color: white;
   font-size: 40px;
-  background-color: #000000; 
+  background-color: #afafae; 
   padding: 10px;
+  margin: 0;
 }
 
 .days {
@@ -19,11 +27,11 @@
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  background-color: #000000;
   margin: 0;
   padding: 0px 0px 10px 0px;
   box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1); /* Light-colored box shadow */
   transition: box-shadow 0.3s ease; /* Adding transition for a smoother effect */
+  color: #000;
 }
 
 .days:hover {
@@ -37,19 +45,19 @@
   border: 2px;
   border-style: solid;
   border-color: #8193d6; /* Dark gray border color */
-  background: #000000; /* Light background color */
+  color: #000;
   margin: 15px 10px;
   text-align: center;
-  color: #333; /* Dark text color */
-  border-radius: 10px;
   
+  border-radius: 10px;
 
+  background-color: #fffbfb83;
   transition: background 0.3s ease, color 0.3s ease; /* Adding transitions for smoother hover effect */
 }
 
 .day:hover {
-  background: #1a1a1a; /* Blue background color on hover */
-  color: #fff; /* White text color on hover */
+  background: #ffffffb6; /* Blue background color on hover */
+  color: #000000; /* White text color on hover */
   cursor: pointer;
 }
 
@@ -68,11 +76,12 @@
   color: #fff; /* White text color on hover */
 }
 p{
-    color: rgb(254, 252, 252);
+    color: rgb(12, 12, 12);
     text-align: center;
     font-size: 15px;
     margin: 10px;
-}.button1 {
+}
+.button1 {
   background: rgb(83, 131, 170); /* Blue button color */
   color: #fff; /* White text color */
   padding: 8px 10px;
@@ -81,6 +90,7 @@ p{
   border-radius: 2px;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease; /* Adding transitions for smoother hover effect */
+ 
 }
 
 .button1:hover {
