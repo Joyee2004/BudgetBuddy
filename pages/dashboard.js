@@ -3,9 +3,9 @@ import "./dashboard.css";
 
 function Dashboard() {
   const [user, setUser] = useState({
-    username: "JohnDoe",
-    guardianName: "JaneDoe",
-    email: "johndoe@example.com",
+    username: "Test",
+    email: "test@test.com",
+    user_id: "test",
     balance: 1000,
   });
 
@@ -54,18 +54,21 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <h1>User Account Dashboard</h1>
-      <img src="./pic.png" alt="Profile Image" />
+      <img className="dash"
+        src="https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"
+        alt="Profile Image"
+      />
 
-      <div className="container">
+      <div className="containerd">
         <h2>User Information</h2>
         <p>
           <strong>Username:</strong> {user.username}
         </p>
         <p>
-          <strong>Guardian Name:</strong> {user.guardianName}
+          <strong>Email:</strong> {user.email}
         </p>
         <p>
-          <strong>Email:</strong> {user.email}
+          <strong>User_id:</strong> {user.user_id}
         </p>
         <p>
           <strong>Balance:</strong> ${user.balance}
