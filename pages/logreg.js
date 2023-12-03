@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import image from "../img/login.png";
+
 
 
 import'./login.css';
@@ -12,13 +12,17 @@ const Logreg = () => {
     setCurrentForm(formName);
   }
   return (
-    <div  style ={{backgroundImage:`url(${image})`,backgroundRepeat:"no-repeat", backgroundSize:"cover"}}className="App">
-      {
-        currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
-      }
-     
+    <div className="complete">
+      
+      <div className="login-text">
+        {currentForm === "login" ? (
+          <Login onFormSwitch={toggleForm} />
+        ) : (
+          <Register onFormSwitch={toggleForm} />
+        )}
+      </div>
     </div>
-  )
+  );
 }
 
 export default Logreg;
