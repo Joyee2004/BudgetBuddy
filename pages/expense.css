@@ -1,105 +1,64 @@
-/* Expense.css */
-.cont {
+.totale {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.8); /* Translucent white background */
-  color: #060606;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 60%;
-  max-width: 600px;
-  margin: 0 520px;
-}
-
-
-/* Styling for AddTransview component */
-input,
-select {
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  color: #090909;
-}
-
-input[type="radio"] {
-  margin-right: 5px;
-}
-
-button {
-  background-color: #3498db; /* Blue button color */
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-/* Styling for Overview component */
-.balance {
-  font-size: 1.5em; /* Slightly larger font size */
-  font-weight: bold;
-  margin-bottom: 15px; /* Increased margin */
-}
-
-.button {
-  background-color: #2ecc71; /* Green button color */
-}
-
-.addTransaction {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
-}
-
-.transactionType {
-  display: flex;
   justify-content: space-between;
-  margin-bottom: 15px; /* Increased margin */
+  height: calc(100vh - 100px); /* Adjust as needed for the navbar and footer heights */
+  background-color: #89c3d7;
+  padding: 20px 20px 80px 20px;
+}
+.exp-img {
+  flex: 1;
+  padding: 20px;
 }
 
-/* Styling for Expense and Income sections */
-.section {
-  margin-bottom: 30px; /* Increased margin */
+.exp-img img {
+  max-width: 100%;
+  height: auto;
+  width: 800px;
 }
-
-.expense {
-  color: #e74c3c; /* Red text color for expenses */
+.backe {
+    display: flex;
+    flex:1;
+    margin-top: 100px;
+  }
+  .conte {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  padding: 20px 40px 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.242);
+  background-color: transparent;
+  margin-bottom: 20px;
 }
-
-.income {
-  color: #27ae60; /* Green text color for income */
-}
-
-/* Transaction component styles */
-h3 {
-  color: #132434; /* Darker text color for headings */
-}
-
-input[type="text"] {
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-/* TransactionCell component styles */
-.cell {
-  padding: 15px; /* Increased padding */
-  margin: 10px 0; /* Increased margin */
-}
-
-.expense-cell {
-  background-color: #e74c3c; /* Red background color for expense cells */
-  color: #fff;
-}
-
-.income-cell {
-  background-color: #2ecc71; /* Green background color for income cells */
-  color: #333; /* Darker text color for income cells */
-}
+ button {
+    background-color: #3498db; /* Blue button color */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: #2ecc71
+  }
+  .balance {
+    font-size: 1.5em; /* Slightly larger font size */
+    font-weight: bold;
+    margin-bottom: 15px; /* Increased margin */
+  }
+   .inpu {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+  
+  .labe {
+    display: block;
+    margin-bottom: 2px;
+    color: #ffffff;
+  }
+  
+  .inpu[type="radio"] {
+    margin-right: 5px;
+  }
+  
