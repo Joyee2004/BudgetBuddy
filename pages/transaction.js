@@ -3,13 +3,20 @@
 import React, { useState, useEffect } from "react";
 import "./expense.css";
 
-export const TransactionCell = (props) => {
-  const cellClassName = props.payload?.type === "expense" ? "expense-cell" : "income-cell";
+const TransactionCell = (props) => {
+  const isExpense = props.payload?.type === "expense";
+  const hasCategory = props.payload?.category;
 
   return (
-    <div className={`cell ${cellClassName}`}>
+    <div>
+      <div className="Cell" isExpense={isExpense}></div>
       <span>{props.payload.desc}</span>
+      <br></br>
       <span>Rs {props.payload.amount}</span>
+      <br></br>
+      <span>Payment mode: {props.payload.paymentmode}</span>
+      <br></br>
+      {hasCategory && <span>Category: {props.payload.category}</span>}
     </div>
   );
 };
@@ -17,37 +24,34 @@ export const TransactionCell = (props) => {
 export const Transaction = (props) => {
   const [search, updateSearch] = useState("");
   const [filteredTransaction, updateTrans] = useState(props.transaction);
-
   const filterData = (search) => {
     if (!search || !search.trim().length) {
       updateTrans(props.transaction);
       return;
     }
-
     let trans = [...props.transaction];
     trans = trans.filter((payload) =>
-      payload.desc.toLowerCase().includes(search.toLowerCase().trim())
+      payload.desc.toLowerCase().includes(search.toLowerCase(0).trim())
     );
     updateTrans(trans);
   };
-
-  useEffect(() => filterData(search), [search, props.transaction]);
-
+  useEffect(() => filterData(search), [props.transaction]);
   return (
-    <>
-      <h3>Transactions</h3>
+    <div className="Container">
+      transaction
       <input
-        placeholder="Search"
+        placeholder="search"
         value={search}
         onChange={(e) => {
           updateSearch(e.target.value);
+          filterData(e.target.value);
         }}
-      />
+      ></input>
       {filteredTransaction?.length
         ? filteredTransaction.map((payload) => (
-            <TransactionCell payload={payload} key={payload.id} />
+            <TransactionCell payload={payload}></TransactionCell>
           ))
-        : "No transactions found"}
-    </>
+        : ""}
+    </div>
   );
 };
